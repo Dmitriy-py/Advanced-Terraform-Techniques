@@ -46,15 +46,34 @@ module "vpc_dev" {
 
 <img width="1920" height="1080" alt="Снимок экрана (1708)" src="https://github.com/user-attachments/assets/227391e7-f09d-4af7-bf51-22f135b61a9f" />
 
+## Задание 3
 
+Выведите список ресурсов в стейте.
+Полностью удалите из стейта модуль vpc.
+Полностью удалите из стейта модуль vm.
+Импортируйте всё обратно. Проверьте terraform plan. Значимых(!!) изменений быть не должно. Приложите список выполненных команд и скриншоты процессы.
 
+## Ответ:
 
+### `Список выполненных команд`
+```terraform
+terraform state list
+terraform state rm module.vpc_dev
+terraform state rm module.marketing_vm
+terraform state rm module.analytics_vm
+terraform import module.vpc_dev.yandex_vpc_network.network <NETWORK_ID>
+terraform import module.vpc_dev.yandex_vpc_subnet.subnet <SUBNET_ID>
+terraform import module.marketing_vm.yandex_compute_instance.vm fhmqnlo5duiip6cirp0e
+terraform import module.analytics_vm.yandex_compute_instance.vm fhm5m6cu5lp5vl162h11
+```
 
+<img width="1920" height="1080" alt="Снимок экрана (1717)" src="https://github.com/user-attachments/assets/0709e5d8-4e24-4e79-be75-084651ae48ae" />
 
+<img width="1920" height="1080" alt="Снимок экрана (1712)" src="https://github.com/user-attachments/assets/a3712705-54e0-4f58-b2f3-e91ebc5fc972" />
 
+<img width="1920" height="1080" alt="Снимок экрана (1715)" src="https://github.com/user-attachments/assets/3d7e0e64-7c17-4e35-9b77-5cbc3961fed8" />
 
-
-
+<img width="1920" height="1080" alt="Снимок экрана (1716)" src="https://github.com/user-attachments/assets/8ae516d4-712c-42dc-bf14-7ec24dad1f57" />
 
 
 
