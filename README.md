@@ -1,2 +1,3 @@
-# Advanced-Terraform-Techniques
-Advanced Terraform Techniques
+# Домашнее задание к занятию «Продвинутые методы работы с Terraform»
+
+## ` Дмитрий Климов `
