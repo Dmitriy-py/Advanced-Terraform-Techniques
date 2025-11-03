@@ -1,4 +1,24 @@
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = "~>1.13.0"
+}
+provider "yandex" {
+  cloud_id  = var.cloud_id
+  folder_id = var.folder_id
+  zone      = var.zone
+  service_account_key_file = var.sa_key_path
+}
 
+locals {
+  ssh_keys_list = compact(split("\n", file(var.public_key_path)))
+  cloud_init_content = templatefile("${path.module}/templates/cloud-init.yml.tpl", {
+    ssh_keys = local.ssh_keys_list
+  })
+}
 
 module "vpc_dev" {
   source   = "./vpc"
