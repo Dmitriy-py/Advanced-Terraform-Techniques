@@ -111,6 +111,8 @@ module "vpc_dev" {
 
 <img width="1920" height="1080" alt="Снимок экрана (1721)" src="https://github.com/user-attachments/assets/82232e7b-e3f5-4031-8396-f5429fc1a5e3" />
 
-### `Ссылка на код:` 
+### `Ссылка на код:` https://github.com/Dmitriy-py/Advanced-Terraform-Techniques/tree/f6f7dd15dfb204fa37283001be0f2d6532e4cc21/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%E2%84%964
+
+
 
 
