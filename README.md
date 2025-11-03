@@ -138,7 +138,7 @@ module "vpc_dev" {
 
 <img width="1920" height="1080" alt="Снимок экрана (1736)" src="https://github.com/user-attachments/assets/9ed41c11-5d73-4f54-a9a2-89cf64959c64" />
 
-
+### `Ссылка на код:` 
 
 
 
