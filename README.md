@@ -134,11 +134,12 @@ module "vpc_dev" {
 
 <img width="1920" height="1080" alt="Снимок экрана (1734)" src="https://github.com/user-attachments/assets/a683393c-5e22-45ad-8985-29dba95e4530" />
 
+### `Ссылка на код:` https://github.com/Dmitriy-py/Advanced-Terraform-Techniques/tree/fba939696755850a392466435eb89499cd3b4252/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%E2%84%965
+
 <img width="1920" height="1080" alt="Снимок экрана (1735)" src="https://github.com/user-attachments/assets/1d4ffc10-c81b-43d2-a76b-36cf2c0fdb98" />
 
 <img width="1920" height="1080" alt="Снимок экрана (1736)" src="https://github.com/user-attachments/assets/9ed41c11-5d73-4f54-a9a2-89cf64959c64" />
 
-### `Ссылка на код:` 
 
 
 
