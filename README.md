@@ -22,6 +22,8 @@
 
 <img width="1920" height="1080" alt="Снимок экрана (1702)" src="https://github.com/user-attachments/assets/2ea87079-4adc-4e9f-8625-bdfd3dec7374" />
 
+### `Ссылка на код:` https://github.com/Dmitriy-py/Advanced-Terraform-Techniques/tree/6e140dd0dc2b7cfffdfd6ac9b02fd9813865a1e1/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%E2%84%961
+
 ## Задание 2
 
 Напишите локальный модуль vpc, который будет создавать 2 ресурса: одну сеть и одну подсеть в зоне, объявленной при вызове модуля, например: ru-central1-a.
@@ -45,6 +47,8 @@ module "vpc_dev" {
 <img width="1920" height="1080" alt="Снимок экрана (1707)" src="https://github.com/user-attachments/assets/25c1fde1-bbff-4b43-9d9b-f381981108b7" />
 
 <img width="1920" height="1080" alt="Снимок экрана (1708)" src="https://github.com/user-attachments/assets/227391e7-f09d-4af7-bf51-22f135b61a9f" />
+
+### `Ссылка на код:` 
 
 ## Задание 3
 
