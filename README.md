@@ -113,6 +113,46 @@ module "vpc_dev" {
 
 ### `Ссылка на код:` https://github.com/Dmitriy-py/Advanced-Terraform-Techniques/tree/f6f7dd15dfb204fa37283001be0f2d6532e4cc21/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%E2%84%964
 
+## Задание 5*
+
+Напишите модуль для создания кластера managed БД Mysql в Yandex Cloud с одним или несколькими(2 по умолчанию) хостами в зависимости от переменной HA=true или HA=false. Используйте ресурс yandex_mdb_mysql_cluster: передайте имя кластера и id сети.
+Напишите модуль для создания базы данных и пользователя в уже существующем кластере managed БД Mysql. Используйте ресурсы yandex_mdb_mysql_database и yandex_mdb_mysql_user: передайте имя базы данных, имя пользователя и id кластера при вызове модуля.
+Используя оба модуля, создайте кластер example из одного хоста, а затем добавьте в него БД test и пользователя app. Затем измените переменную и превратите сингл хост в кластер из 2-х серверов.
+Предоставьте план выполнения и по возможности результат. Сразу же удаляйте созданные ресурсы, так как кластер может стоить очень дорого. Используйте минимальную конфигурацию.
+
+## Ответ:
+
+<img width="1920" height="1080" alt="Снимок экрана (1728)" src="https://github.com/user-attachments/assets/e3db5449-7bc2-43e1-9844-da1011b61cd6" />
+
+<img width="1920" height="1080" alt="Снимок экрана (1729)" src="https://github.com/user-attachments/assets/815f6a05-fecb-495b-8ab6-5fba41ae4428" />
+
+<img width="1920" height="1080" alt="Снимок экрана (1731)" src="https://github.com/user-attachments/assets/a304319a-151b-4474-adab-3dc7c4ccd639" />
+
+<img width="1920" height="1080" alt="Снимок экрана (1732)" src="https://github.com/user-attachments/assets/c6475634-6540-4b73-ad74-389482247c00" />
+
+<img width="1920" height="1080" alt="Снимок экрана (1733)" src="https://github.com/user-attachments/assets/fd7d35d1-06e1-44fb-96c0-506ed9bb1ee0" />
+
+<img width="1920" height="1080" alt="Снимок экрана (1734)" src="https://github.com/user-attachments/assets/a683393c-5e22-45ad-8985-29dba95e4530" />
+
+<img width="1920" height="1080" alt="Снимок экрана (1735)" src="https://github.com/user-attachments/assets/1d4ffc10-c81b-43d2-a76b-36cf2c0fdb98" />
+
+<img width="1920" height="1080" alt="Снимок экрана (1736)" src="https://github.com/user-attachments/assets/9ed41c11-5d73-4f54-a9a2-89cf64959c64" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
