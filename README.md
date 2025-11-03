@@ -48,7 +48,7 @@ module "vpc_dev" {
 
 <img width="1920" height="1080" alt="Снимок экрана (1708)" src="https://github.com/user-attachments/assets/227391e7-f09d-4af7-bf51-22f135b61a9f" />
 
-### `Ссылка на код:` 
+### `Ссылка на код:` https://github.com/Dmitriy-py/Advanced-Terraform-Techniques/tree/4fffe640824b1b5470a042ae1793b50ae7a13002/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%E2%84%962
 
 ## Задание 3
 
@@ -60,6 +60,7 @@ module "vpc_dev" {
 ## Ответ:
 
 ### `Список выполненных команд`
+
 ```terraform
 terraform state list
 terraform state rm module.vpc_dev
@@ -79,10 +80,37 @@ terraform import module.analytics_vm.yandex_compute_instance.vm fhm5m6cu5lp5vl16
 
 <img width="1920" height="1080" alt="Снимок экрана (1716)" src="https://github.com/user-attachments/assets/8ae516d4-712c-42dc-bf14-7ec24dad1f57" />
 
+## Задание 4*
 
+Измените модуль vpc так, чтобы он мог создать подсети во всех зонах доступности, переданных в переменной типа list(object) при вызове модуля.
+Пример вызова
+```terraform
+module "vpc_prod" {
+  source       = "./vpc"
+  env_name     = "production"
+  subnets = [
+    { zone = "ru-central1-a", cidr = "10.0.1.0/24" },
+    { zone = "ru-central1-b", cidr = "10.0.2.0/24" },
+    { zone = "ru-central1-c", cidr = "10.0.3.0/24" },
+  ]
+}
 
+module "vpc_dev" {
+  source       = "./vpc"
+  env_name     = "develop"
+  subnets = [
+    { zone = "ru-central1-a", cidr = "10.0.1.0/24" },
+  ]
+}
+```
+Предоставьте код, план выполнения, результат из консоли YC.
 
+## Ответ:
 
+<img width="1920" height="1080" alt="Снимок экрана (1722)" src="https://github.com/user-attachments/assets/2da6bca7-de0f-4f05-804d-ccf9d1d85b7d" />
 
+<img width="1920" height="1080" alt="Снимок экрана (1721)" src="https://github.com/user-attachments/assets/82232e7b-e3f5-4031-8396-f5429fc1a5e3" />
+
+### `Ссылка на код:` 
 
 
