@@ -1,0 +1,208 @@
+--- TFLint Results ---
+1 issue(s) found:
+
+Warning: Missing version constraint for provider "yandex" in `required_providers` (terraform_required_providers)
+
+  on providers.tf line 8:
+   8:     yandex = {
+   9:       source  = "yandex-cloud/yandex"
+  10:     }
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.13.0/docs/rules/terraform_required_providers.md
+
+
+--- Checkov Results ---
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.490 
+
+terraform scan results:
+
+Passed checks: 3, Failed checks: 5, Skipped checks: 0, Parsing errors: 1
+
+Check: CKV_YC_4: "Ensure compute instance does not have serial console enabled."
+	PASSED for resource: module.analytics_vm.yandex_compute_instance.vm
+	File: /Задание №1/module/vm_creator/main.tf:1-28
+	Calling File: /Задание №1/main.tf:33-41
+Check: CKV_YC_4: "Ensure compute instance does not have serial console enabled."
+	PASSED for resource: module.marketing_vm.yandex_compute_instance.vm
+	File: /Задание №1/module/vm_creator/main.tf:1-28
+	Calling File: /Задание №1/main.tf:23-31
+Check: CKV_YC_12: "Ensure public IP is not assigned to database cluster."
+	PASSED for resource: module.mysql_cluster_example.yandex_mdb_mysql_cluster.cluster
+	File: /Задание №5/module/db_cluster/main.tf:5-29
+	Calling File: /Задание №5/main.tf:1-13
+Check: CKV_YC_11: "Ensure security group is assigned to network interface."
+	FAILED for resource: module.analytics_vm.yandex_compute_instance.vm
+	File: /Задание №1/module/vm_creator/main.tf:1-28
+	Calling File: /Задание №1/main.tf:33-41
+
+		1  | resource "yandex_compute_instance" "vm" {
+		2  |   name        = var.vm_name
+		3  |   zone        = var.zone
+		4  |   hostname    = var.vm_hostname
+		5  |   labels      = var.instance_labels
+		6  | 
+		7  |   resources {
+		8  |     cores  = 2
+		9  |     memory = 2
+		10 |     core_fraction = 20
+		11 |   }
+		12 | 
+		13 |   boot_disk {
+		14 |     initialize_params {
+		15 |       image_id = "fd8l4jle6f83dt7hsv30" # Debian 12
+		16 |       size     = 10
+		17 |     }
+		18 |   }
+		19 | 
+		20 |   network_interface {
+		21 |     subnet_id = var.subnet_id
+		22 |     nat       = true
+		23 |   }
+		24 | 
+		25 |   metadata = {
+		26 |     user-data = var.cloud_init_content
+		27 |   }
+		28 | }
+
+Check: CKV_YC_2: "Ensure compute instance does not have public IP."
+	FAILED for resource: module.analytics_vm.yandex_compute_instance.vm
+	File: /Задание №1/module/vm_creator/main.tf:1-28
+	Calling File: /Задание №1/main.tf:33-41
+
+		1  | resource "yandex_compute_instance" "vm" {
+		2  |   name        = var.vm_name
+		3  |   zone        = var.zone
+		4  |   hostname    = var.vm_hostname
+		5  |   labels      = var.instance_labels
+		6  | 
+		7  |   resources {
+		8  |     cores  = 2
+		9  |     memory = 2
+		10 |     core_fraction = 20
+		11 |   }
+		12 | 
+		13 |   boot_disk {
+		14 |     initialize_params {
+		15 |       image_id = "fd8l4jle6f83dt7hsv30" # Debian 12
+		16 |       size     = 10
+		17 |     }
+		18 |   }
+		19 | 
+		20 |   network_interface {
+		21 |     subnet_id = var.subnet_id
+		22 |     nat       = true
+		23 |   }
+		24 | 
+		25 |   metadata = {
+		26 |     user-data = var.cloud_init_content
+		27 |   }
+		28 | }
+
+Check: CKV_YC_11: "Ensure security group is assigned to network interface."
+	FAILED for resource: module.marketing_vm.yandex_compute_instance.vm
+	File: /Задание №1/module/vm_creator/main.tf:1-28
+	Calling File: /Задание №1/main.tf:23-31
+
+		1  | resource "yandex_compute_instance" "vm" {
+		2  |   name        = var.vm_name
+		3  |   zone        = var.zone
+		4  |   hostname    = var.vm_hostname
+		5  |   labels      = var.instance_labels
+		6  | 
+		7  |   resources {
+		8  |     cores  = 2
+		9  |     memory = 2
+		10 |     core_fraction = 20
+		11 |   }
+		12 | 
+		13 |   boot_disk {
+		14 |     initialize_params {
+		15 |       image_id = "fd8l4jle6f83dt7hsv30" # Debian 12
+		16 |       size     = 10
+		17 |     }
+		18 |   }
+		19 | 
+		20 |   network_interface {
+		21 |     subnet_id = var.subnet_id
+		22 |     nat       = true
+		23 |   }
+		24 | 
+		25 |   metadata = {
+		26 |     user-data = var.cloud_init_content
+		27 |   }
+		28 | }
+
+Check: CKV_YC_2: "Ensure compute instance does not have public IP."
+	FAILED for resource: module.marketing_vm.yandex_compute_instance.vm
+	File: /Задание №1/module/vm_creator/main.tf:1-28
+	Calling File: /Задание №1/main.tf:23-31
+
+		1  | resource "yandex_compute_instance" "vm" {
+		2  |   name        = var.vm_name
+		3  |   zone        = var.zone
+		4  |   hostname    = var.vm_hostname
+		5  |   labels      = var.instance_labels
+		6  | 
+		7  |   resources {
+		8  |     cores  = 2
+		9  |     memory = 2
+		10 |     core_fraction = 20
+		11 |   }
+		12 | 
+		13 |   boot_disk {
+		14 |     initialize_params {
+		15 |       image_id = "fd8l4jle6f83dt7hsv30" # Debian 12
+		16 |       size     = 10
+		17 |     }
+		18 |   }
+		19 | 
+		20 |   network_interface {
+		21 |     subnet_id = var.subnet_id
+		22 |     nat       = true
+		23 |   }
+		24 | 
+		25 |   metadata = {
+		26 |     user-data = var.cloud_init_content
+		27 |   }
+		28 | }
+
+Check: CKV_YC_1: "Ensure security group is assigned to database cluster."
+	FAILED for resource: module.mysql_cluster_example.yandex_mdb_mysql_cluster.cluster
+	File: /Задание №5/module/db_cluster/main.tf:5-29
+	Calling File: /Задание №5/main.tf:1-13
+
+		5  | resource "yandex_mdb_mysql_cluster" "cluster" {
+		6  |   name        = var.cluster_name
+		7  |   environment = "PRESTABLE"
+		8  |   network_id  = var.network_id
+		9  |   version     = "8.0"
+		10 | 
+		11 |   resources {
+		12 |     resource_preset_id = "s1.micro"
+		13 |     disk_type_id       = "network-hdd"
+		14 |     disk_size          = 10
+		15 |   }
+		16 | 
+		17 |   host {
+		18 |     zone      = var.zone
+		19 |     subnet_id = var.subnet_id 
+		20 |   }
+		21 | 
+		22 |   dynamic "host" {
+		23 |     for_each = local.hosts_count > 1 ? [1] : []
+		24 |     content {
+		25 |       zone      = "ru-central1-b"
+		26 |       subnet_id = var.subnet_id_ha
+		27 |     }
+		28 |   }
+		29 | }
+
+Error parsing file /home/vm1/Advanced-Terraform-Techniques/Задание №2/vpc/main.tf
+
